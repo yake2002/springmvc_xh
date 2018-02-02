@@ -1,4 +1,4 @@
-package entity;
+package com.ssh.entity;
 // Generated 2018-2-2 15:31:19 by Hibernate Tools 4.3.5.Final
 
 import javax.persistence.Column;

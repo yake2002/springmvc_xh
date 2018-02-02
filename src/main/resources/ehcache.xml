@@ -16,14 +16,13 @@
     <!-- Special objects setting. -->  
   
     <cache   
-         name="org.andy.work.entity.AcctUser"  
+         name="com.ssh.entity.AcctUser"  
          maxElementsInMemory="2"  
          memoryStoreEvictionPolicy="LRU"   
          eternal="true"   
          diskPersistent="false"  
          overflowToDisk="false"   
          maxElementsOnDisk="1000000" />   
-  
-  
+
   
 </ehcache>
