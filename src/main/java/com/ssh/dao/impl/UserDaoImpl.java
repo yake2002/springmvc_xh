@@ -34,7 +34,7 @@ public class UserDaoImpl implements UserDao {
     @Override  
     public List<AcctUser> findAll() {  
         List<AcctUser> acctUsers = this.getCurrentSession().createQuery("from AcctUser").setCacheable(true).list();  
-        return acctUsers;  
+        return acctUsers;
     }  
   
     @Override  
