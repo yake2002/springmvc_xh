@@ -9,6 +9,7 @@
       
     <context:property-placeholder location="classpath:config.properties"/>  
     <!-- 扫描service自动注入为bean -->  
+    <!-- <context:annotation-config/> 隐含此语句被调用-->
     <context:component-scan base-package="com.ssh.service.impl,com.ssh.dao.impl" />  
   
 </beans> 
