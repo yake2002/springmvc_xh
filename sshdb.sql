@@ -78,7 +78,7 @@ CREATE TABLE `acct_user` (
 -- ----------------------------
 -- Records of acct_user
 -- ----------------------------
-INSERT INTO `acct_user` VALUES ('14ff5253-5912-4a3f-b51b-f50d9da0271d', 'andy', '13022221111', '2018-02-02 18:58:12');
+INSERT INTO `acct_user` VALUES ('14ff5253-5912-4a3f-b51b-f50d9da0271d', 'zty', '13022221111', '2018-02-02 18:58:12');
 INSERT INTO `acct_user` VALUES ('6e5afb1d-50e1-45fe-b6fe-b9e399415387', 'andy', '15147174722', '2015-02-06 17:06:36');
 
 -- ----------------------------
