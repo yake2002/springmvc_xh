@@ -1,11 +1,16 @@
 package com.ssh.entity;
 // Generated 2018-2-2 15:31:19 by Hibernate Tools 4.3.5.Final
 
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -15,25 +20,56 @@ import javax.persistence.Table;
 @Table(name = "acct_authority", catalog = "sshdb")
 public class AcctAuthority implements java.io.Serializable {
 
-	private AcctAuthorityId id;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1495787682343110812L;
+	private String id;
+	private String name;
+	private Set<AcctRole> acctRoles = new HashSet<AcctRole>(0);
 
 	public AcctAuthority() {
+		
 	}
 
-	public AcctAuthority(AcctAuthorityId id) {
+	public AcctAuthority(String id, String name) {
 		this.id = id;
+		this.name = name;
 	}
 
-	@EmbeddedId
+	public AcctAuthority(String id, String name, Set<AcctRole> acctRoles) {
+		this.id = id;
+		this.name = name;
+		this.acctRoles = acctRoles;
+	}
 
-	@AttributeOverrides({ @AttributeOverride(name = "id", column = @Column(name = "id", length = 36)),
-			@AttributeOverride(name = "name", column = @Column(name = "name")) })
-	public AcctAuthorityId getId() {
+	@Id
+	@Column(name = "id", unique = true, nullable = false, length = 36)
+	public String getId() {
 		return this.id;
 	}
 
-	public void setId(AcctAuthorityId id) {
+	public void setId(String id) {
 		this.id = id;
+	}
+
+	@Column(name = "name", nullable = false)
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "acct_role_authority", catalog = "sshdb", joinColumns = { @JoinColumn(name = "authority_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) })
+	public Set<AcctRole> getAcctRoles() {
+		return this.acctRoles;
+	}
+
+	public void setAcctRoles(Set<AcctRole> acctRoles) {
+		this.acctRoles = acctRoles;
 	}
 
 }

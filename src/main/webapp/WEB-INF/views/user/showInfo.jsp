@@ -21,12 +21,12 @@
 	用户信息 昵称： ${userInfo.nickName} 用户id：${userInfo.id}	用户电话:${userInfo.telephone } 注册时间：
 	<fmt:formatDate value="${userInfo.registerTime }" pattern="yyyy-MM-dd HH:mm:ss" />
 	角色：[
-<%-- 	<c:forEach items="${ userInfo.acctRoles}" var="role">
+	<c:forEach items="${ userInfo.acctRoles}" var="role">
                         ${role.name } 权限[
-                           <c:forEach items="${ role.acctAuthorities}" var="authority">
+                           <c:forEach items="${role.acctAuthorities}" var="authority">
                              ${authority.name }
                            </c:forEach> ]
-                      </c:forEach> --%>
+                      </c:forEach>
 	]
 
 	<br /> ajax显示全部用户信息：

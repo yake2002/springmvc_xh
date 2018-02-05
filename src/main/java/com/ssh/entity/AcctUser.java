@@ -96,7 +96,7 @@ public class AcctUser implements java.io.Serializable {
     @JsonIgnoreProperties(value={"acctUsers", "acctAuthorities"})  
     @ManyToMany(fetch = FetchType.LAZY)  
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)  
-    @JoinTable(name = "acct_user_role", catalog = "work", joinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) })  
+    @JoinTable(name = "acct_user_role", catalog = "sshdb", joinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) })  
     public Set<AcctRole> getAcctRoles() {  
         return this.acctRoles;  
     }  
